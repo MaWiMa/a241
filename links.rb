@@ -15,7 +15,7 @@ rectangle(0,0,500,50,:stroke=>"none",:fill=>"none") # background
 polygon([[0,25],[30,15],[30,35]],:stroke=>"none",:fill=>"white") # arrow
 end
 
-File.open("site/images/back.svg", "w") { |f| img.write(f) } # store svg on disk
+File.open("a241/images/back.svg", "w") { |f| img.write(f) } # store svg on disk
 
 # home page 
 img = Rasem::SVGImage.new(:width => 500, :height => 50) do
@@ -26,7 +26,7 @@ rectangle(0,0,500,50,:stroke=>"none",:fill=>"none") # background
      line(330,25,490,25,:stroke=>"white",:stroke_width=>10)
  end
 
-File.open("site/images/home.svg", "w") { |f| img.write(f) } # store svg on disk
+File.open("a241/images/home.svg", "w") { |f| img.write(f) } # store svg on disk
 # next page 
 img = Rasem::SVGImage.new(:width => 500, :height => 50) do
 
@@ -38,4 +38,4 @@ rectangle(0,0,500,50,:stroke=>"none",:fill=>"none") # background
 polygon([[500,25],[470,15],[470,35]],:stroke=>"none",:fill=>"white") # arrow
 end
 
-File.open("site/images/next.svg", "w") { |f| img.write(f) } # store svg on disk
+File.open("a241/images/next.svg", "w") { |f| img.write(f) } # store svg on disk
