@@ -6,19 +6,19 @@
 
 #site/images/skills.svg
 
-if [[ ! -f site/images/back.svg || ! -f site/images/home.svg || ! -f site/images/next.svg ]]; then
+if [[ ! -f a241/images/back.svg || ! -f a241/images/home.svg || ! -f a241/images/next.svg ]]; then
 ruby links.rb
 echo "making images for links"
 fi
 
-if [[ ! -f site/images/cover.svg  ]]; then
+if [[ ! -f a241/images/cover.svg  ]]; then
 ruby cover.rb
 echo "making cover image for homepage"
 fi
 
-if [[ ! -f site/images/skills.svg  ]]; then
+if [[ ! -f a241/images/skills.svg  ]]; then
 ruby a241.rb AV01 Pan-Peter n n n n p n n n n REK 2018-01-30
-mv site/images/AV01-Pan-Peter-Politik-2018-01-30.svg site/images/skills.svg
+mv a241/images/AV01-Pan-Peter-Politik-2018-01-30.svg site/images/skills.svg
 echo "making skills image for homepage"
 fi
 
