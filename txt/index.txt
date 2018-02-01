@@ -10,9 +10,14 @@
  
 Fachbereich Technik/Naturwissenschaften, Berufsfeld Bau- und Holztechnik 
  
-[cover]#image:cover.svg[cover]# 
-[cover]#image:skills.svg[skills, width=400px]# 
+_You find the source at link:https://bitbucket.org/mawima/a241[https://bitbucket.org/mawima/a241]_
  
+image::skills.svg[skills,align="center",width=800px]
+ 
+ 
+[cover]#image:cover.svg[cover]# 
+[bottomcenter]#https://bitbucket.org/mawima/a241# 
+
 link:AV01-Alonso-Damian-Mathematik-2018-08-01{ext-relative}[AV01-Alonso-Damian-Mathematik-2018-08-01]
  
 link:AV01-Alonso-Damian-Politik-2018-08-01{ext-relative}[AV01-Alonso-Damian-Politik-2018-08-01]
