@@ -17,8 +17,8 @@ echo "making cover image for homepage"
 fi
 
 if [[ ! -f a241/images/skills.svg  ]]; then
-ruby a241.rb AV01 Pan-Peter n n n n p n n n n REK 2018-01-30
-mv a241/images/AV01-Pan-Peter-Politik-2018-01-30.svg site/images/skills.svg
+ruby a241.rb AV01 Pan-Peter n n n n p n n n n REK 2018-02-01
+mv a241/images/AV01-Pan-Peter-Politik-2018-02-01.svg a241/images/skills.svg
 echo "making skills image for homepage"
 fi
 
