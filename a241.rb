@@ -319,4 +319,4 @@ use(circlequarters,:fill_opacity=>0.5).translate((height*1.185).to_i,(height*0.5
 # Gesamtnote End
 end
 
-File.open("site/images/#{klasse}-#{name}-#{fach}-#{checks}.svg", "w") { |f| img.write(f) } # store svg on disk
+File.open("a241/images/#{klasse}-#{name}-#{fach}-#{checks}.svg", "w") { |f| img.write(f) } # store svg on disk
