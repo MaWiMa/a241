@@ -5,7 +5,7 @@ require 'asciidoctor'
 idx = "index"
 
 images = []
-Dir.glob("site/images/*-*.svg").each { |img| images.push(File.basename(img, ".svg")) } # sample images 
+Dir.glob("a241/images/*-*.svg").each { |img| images.push(File.basename(img, ".svg")) } # sample images 
 images.sort! #sort images
 
 f = File.new("txt/" + idx + ".txt", "w")
@@ -23,10 +23,16 @@ f = File.new("txt/" + idx + ".txt", "w")
  f.write(" \n")
  f.write("Fachbereich Technik/Naturwissenschaften, Berufsfeld Bau- und Holztechnik \n")
  f.write(" \n")
- f.write("[cover]#image:cover.svg[cover]# \n")
- f.write("[cover]#image:skills.svg[skills, width=400px]# \n")
-# f.write("link:A241Skills{ext-relative}[A241Skills]\n")
+ f.write("_You find the source at link:https://bitbucket.org/mawima/a241[https://bitbucket.org/mawima/a241]_\n")
  f.write(" \n")
+ f.write("image::skills.svg[skills,align=\"center\",width=800px]\n")
+ f.write(" \n")
+ f.write(" \n")
+ f.write("[cover]#image:cover.svg[cover]# \n")
+# f.write("[cover]#image:skills.svg[skills, width=400px]# \n")
+ f.write "[bottomcenter]#https://bitbucket.org/mawima/a241# \n"
+ f.write("\n")
+
  images.each { |img|
  f.write("link:" + img + "{ext-relative}[" + img + "]\n")  
  f.write(" \n") }
@@ -34,7 +40,7 @@ f.close
 
 Asciidoctor.render_file "txt/" + idx + ".txt",
 :base_dir => '.',
-:to_dir => 'site/',
+:to_dir => 'a241/',
 :attributes => 'linkcss stylesdir=. stylesheet=adoc.css imagesdir=images'
 
  m = images.length
@@ -63,5 +69,5 @@ f.close
 
 Asciidoctor.render_file "txt/" + img + ".txt",
 :base_dir => '.',
-:to_dir => 'site/',
+:to_dir => 'a241/',
 :attributes => 'linkcss stylesdir=. stylesheet=adoc.css imagesdir=images' }
