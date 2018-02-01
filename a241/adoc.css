@@ -4,7 +4,7 @@ img{max-width:100%}
 h1,h2,h3,h4{text-decoration: none;position: relative;padding-left: 80px}
 p{font-size: 20px;}
 .cover {max-height:100%;z-index:-1; position:fixed; top:0px; right:0px;/* opacity: 0.5*/}
-.bottomleft{position: fixed; bottom: 0em;left: 0.5%;background-color:#C7C7C7; width:33%;height:40px;opacity: 0.5; text-align:center}
-.bottomcenter{position: fixed; bottom:0em; left: 33.5%; background-color:#C7C7C7; width:33%;height:40px;opacity: 0.5; text-align:center}
-.bottomright {position: fixed; bottom:0em; right: 0.5%; background-color:#C7C7C7; width:33%;height:40px;opacity: 0.5; text-align:center}
+.bottomleft{position: fixed; bottom: 0em;left: 0.5%;background-color:#C7C7C7; width:33%;max-height:40px;opacity: 0.5; text-align:center}
+.bottomcenter{position: fixed; bottom:0em; left: 33.5%; background-color:#C7C7C7; width:33%;max-height:40px;opacity: 0.5; text-align:center}
+.bottomright {position: fixed; bottom:0em; right: 0.5%; background-color:#C7C7C7; width:33%;max-height:40px;opacity: 0.5; text-align:center}
 .bottomleft:hover,.bottomcenter:hover,.bottomright:hover{width:33%;background-color:black;opacity: 0.6}
