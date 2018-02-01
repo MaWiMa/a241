@@ -1,0 +1,30 @@
+A241 -> assessment from two fo(u)r one of them
+------------------------------------------------------------------
+a241.rb makes an image to show self and foreign assessment of a pupil in one subject. For both assessments there have to be four sub-assessments, named social skills (Sozialkompetenz), independence (Selbstständigkeit)
+skills (Fertigkeiten) and knowledge (Wissen).
+
+makePages.rb makes linked hmtl pages for all svg files in dir images.
+html pages are written to dir site.
+
+make.sh does make many svg files and the relating hmtl files at once for one class if file Data.CLASS exist (where extension CLASS is the name of the class).
+
+deletePages.rb cleans the directories images, site and txt.
+------------------------------------------------------------------
+More explanation:
+
+If you like to see the examples, just git checkout examples.
+
+First fill file(s) Data.* with parameters in following form
+
+Class LastName-FirstName self assessment subject assessment teacher date
+JA99 Rom-Peter 3 2 3 3 m 2 1 3 3 REK 2018-01-12
+
+Second, then on bash run (for example for class JA99):
+while read line; do $(ruby a241.rb $line);done < Data.JA99
+
+Third, do ruby makePages.rb
+
+If you like todo everything at once, just run sh make.sh JA99.
+
+If you want to clean everything, run ruby deletePages.rb.
+To extract only the teachers assessments, run sh make.sh marks.

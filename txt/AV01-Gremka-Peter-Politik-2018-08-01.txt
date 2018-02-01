@@ -1,0 +1,12 @@
+:ext-relative: {outfilesuffix} 
+:notitle:
+:nofooter:
+:doctype: article 
+:doctitle: AV01-Gremka-Peter-Politik-2018-08-01
+:copyright: CC-BY-SA 4.0 
+ 
+image::AV01-Gremka-Peter-Politik-2018-08-01.svg[AV01-Gremka-Peter-Politik-2018-08-01,align="center",width=auto]
+ 
+[bottomleft]#image:back.svg[back to index,link=AV01-Gremka-Peter-Mathematik-2018-08-01{ext-relative}]# 
+[bottomcenter]#image:home.svg[back to index,link=index{ext-relative}]# 
+[bottomright]#image:next.svg[back to index,link=AV01-Kiden-Jens-Mathematik-2018-08-01{ext-relative}]# 
