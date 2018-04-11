@@ -1,34 +1,63 @@
-A241 -> assessment from two fo(u)r one of them
+= A241 -> assessment from two fo(u)r one of them
 
+== source
 You find the source at https://bitbucket.org/mawima/a241
 You find the website at https://mawima.bitbucket.io/a241
-------------------------------------------------------------------
-a241.rb makes an image to show self and foreign assessment of a pupil in one subject. For both assessments there have to be four sub-assessments, named social skills (Sozialkompetenz), independence (Selbstständigkeit)
-skills (Fertigkeiten) and knowledge (Wissen).
 
-makePages.rb makes linked hmtl pages for all svg files in dir images.
-html pages are written to dir site.
+== description
+Sketch of self and foreign assessment of a pupil in one subject. Both assessments are described by four sub-assessments, named social skills (Sozialkompetenz), independence (Selbstständigkeit), skills (Fertigkeiten) and knowledge (Wissen).
 
-make.sh does make many svg files and the relating hmtl files at once for one class if file Data.CLASS exist (where extension CLASS is the name of the class).
+The four competences of each assessment are layered.
 
-deletePages.rb cleans the directories images, site and txt.
-------------------------------------------------------------------
-More explanation:
+Besides (a) grade, characteristics are drawn in one place through
 
-If you like to see the examples, look at https://mawima.bitbucket.io/a241
-or just run git checkout examples and look for hmtl files in dir site/.
+(b) bold and simple strength-weakness distribution, shown with uniform or uneven arrangement of competences in one assessment, 
 
-First fill file(s) Data.* with parameters in following form
+(c) correlation of self and foreign assessment, shown with similarity or diversity of assessment layers.
+
+The visualization is done by reading csv data through scripts, which generate images. The assessments are shown in one dominant area on two layers and in two seperated areas on the right side of the image.
+This is done with three radar charts.
+
+You should find your local pages under pages/a241/. To get the visualized data open pages/a241/index.html with your webbrowser.
+
+== scripting
+makePages.rb makes linked hmtl pages which are written to folder pages/a241.
+There must be a parameter with the filename of the file you want to parse.
+The parsed file should, but not must, be found in folder data/csv/.
+You can run for example:
+
+ruby makePages.rb data/csv/data.csv
+
+
+The script a241.rb makes svg-images of the parsed data from a csv file to show self and foreign assessment of a pupil in one subject.
+If you only want to make the svg-files, then just run:
+
+ruby a241.rb data/csv/data.csv
+
+You may delete all temporary files with:
+
+ruby deletePages.rb
+
+== details
+You should find examples at https://mawima.bitbucket.io/a241.
+
+You should find source at https://bitbucket.org/mawima/a241
+and https://github.com/MaWiMa/a241
+
+First fill a csv file with data.
+The (header of the) csv-file should look like this:
+
+class,name,ssoz,ssel,sfer,swis,subject,fsoz,fsel,ffer,fwis,teacher,date,height
+
+(examples are shown in simple.rb and sample.rb)
+
+If you have data (without header) in following (formerly used) form use sample.rb to generate a csv file:
 
 Class LastName-FirstName self assessment subject assessment teacher date
 AV01 Rom-Peter 3 2 3 3 m 2 1 3 3 REK 2018-01-12
 
-Second, then on bash run (for example for class AV01):
-while read line; do $(ruby a241.rb $line);done < Data.AV01
+Next steps are only possible if file data/data.csv exists.
+If you want to generate data for only one pupil, use ruby makePupil.rb.
+Generating data for one class is done with ruby makeClass.rb.
 
-Third, do ruby makePages.rb
-
-If you like todo everything at once, just run sh make.sh AV01.
-
-If you want to clean everything, run ruby deletePages.rb.
-To extract only the teachers assessments, run sh make.sh marks.
+Not ready yet ...
