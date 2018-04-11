@@ -1,4 +1,27 @@
-#!/usr/bin/ruby
-Dir.glob("a241/images/*-*.svg").each { |file| File.delete(file)} # delete all SVG-files in dir images with one or more "-" in filename
-Dir.glob("a241/*.html").each { |file| File.delete(file)} # delete all HTML-files in dir site 
-Dir.glob("txt/*").each { |file| File.delete(file)} #delete all files in dir txt
+#!/usr/bin/env ruby
+require 'find'
+require_relative 'whatDir'
+
+delroot = A241DIR.tempdirs[0]
+
+if File.exists?(delroot)
+  Find.find(delroot) { |d|
+    if File.file?(d)
+      File.delete(d)
+      puts "file: #{d} deleted"
+    end
+  }
+else
+  puts "no files found, nothing to delete"
+end
+
+=begin
+A241DIR.tempdirs.reverse_each { |i|
+  if File.exists?(i)
+    Dir.rmdir(i)
+    puts "directory: #{i} deleted"
+  else
+    puts "no directory #{i} found, nothing to delete"
+  end
+}
+=end
